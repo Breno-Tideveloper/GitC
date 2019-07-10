@@ -11,6 +11,7 @@ namespace Teste_dia_10_07
         static void Main(string[] args)
         {
             Console.WriteLine("hello Git");
+            Console.WriteLine("hello world");
         }
     }
 }
