@@ -19,53 +19,12 @@ namespace SistemaBibliotecaonlineNasa3PONTOZERO
 
             if (MenuInicial() == 1)
             {
-                Console.Clear();
+                MostrarMenuAlocacao();  
 
-                MostrarSejaBemVindo();
-
-                Console.WriteLine("Menu - Alocação de livros");
-                Console.WriteLine("Digite o nome do livro a ser alocado:");
-
-                var nomedolivro = Console.ReadLine();
-                if(PesquisaLivroParaAlocacao(nomedolivro))
-                {
-
-                    Console.Clear();
-                    Console.WriteLine("Você eseja alocar o livro? para sim(1) para não(0)");
-
-
-                    int.TryParse(Console.ReadKey().KeyChar.ToString(), out int keypress);
-                    if (keypress == 1)
-                    {
-                        Console.Clear();
-                        AlocarLivro(nomedolivro);
-                        Console.WriteLine("Livro Alocado com sucesso!");
-                    }
-                    else
-                        Console.Clear();
-                    Console.WriteLine("Listagem de Livros:");
-
-                    for (int i = 0; i < baseDeLivros.GetLength(0); i++)
-                    {
-                        Console.WriteLine($"Nome: {baseDeLivros[i, 0]} Disponivel: {baseDeLivros[i, 1]}");
-                    }
-                }
-
-                /*Console.WriteLine("Você eseja alocar o livro? para sim(1) para não(0)");
-                var alocarLivro = Console.ReadKey();*/
-
-                //for (int i = 0; i  < baseDeLivros.GetLength(0); i++)
-                //{
-                //    Console.WriteLine($"O livro:{baseDeLivros[i, 1]} pode ser alocado?:{baseDeLivros[i, 1]}");
-
-                //    poderserAlocado = baseDeLivros[i, 1] == "sim";
-                //}
 
             }
 
-
-
-            Console.ReadKey();
+             Console.ReadKey();
         }
         /// <summary>
         /// metodo para mostrar munu incial do sistema.
@@ -138,6 +97,43 @@ namespace SistemaBibliotecaonlineNasa3PONTOZERO
             {
                 if (nomeLivro == baseDeLivros[i, 0])
                     baseDeLivros[i, 1] = "não";
+            }
+        }
+        /// <summary>
+        /// metodo de alocar livro.
+        /// </summary>
+        public static void MostrarMenuAlocacao()
+        {
+            Console.Clear();
+
+            MostrarSejaBemVindo();
+
+            Console.WriteLine("Menu - Alocação de livros");
+            Console.WriteLine("Digite o nome do livro a ser alocado:");
+
+            var nomedolivro = Console.ReadLine();
+            if (PesquisaLivroParaAlocacao(nomedolivro))
+            {
+
+                Console.Clear();
+                Console.WriteLine("Você eseja alocar o livro? para sim(1) para não(0)");
+
+
+                int.TryParse(Console.ReadKey().KeyChar.ToString(), out int keypress);
+                if (keypress == 1)
+                {
+                    Console.Clear();
+                    AlocarLivro(nomedolivro);
+                    Console.WriteLine("Livro Alocado com sucesso!");
+                }
+                else
+                    Console.Clear();
+                Console.WriteLine("Listagem de Livros:");
+
+                for (int i = 0; i < baseDeLivros.GetLength(0); i++)
+                {
+                    Console.WriteLine($"Nome: {baseDeLivros[i, 0]} Disponivel: {baseDeLivros[i, 1]}");
+                }
             }
         }
      }
