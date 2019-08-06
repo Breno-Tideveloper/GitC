@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C8DEE26-55D8-4D6A-B0CD-9B26D599BA07}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MVCProject</RootNamespace>
+    <AssemblyName>MVCProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BibliotecaFinalSpaceDataSet.cs">
+      <DependentUpon>BibliotecaFinalSpaceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BibliotecaFinalSpaceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BibliotecaFinalSpaceDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BibliotecaProjeto.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Autores.cs" />
+    <Compile Include="Model\Editoras.cs" />
+    <Compile Include="Model\Generos.cs" />
+    <Compile Include="Model\Informacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\LivroAutor.cs" />
+    <Compile Include="Model\Livros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\Locacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Autores\frmAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Autores\frmAutores.Designer.cs">
+      <DependentUpon>frmAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Autores\frmAutoresAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Autores\frmAutoresAdicionar.Designer.cs">
+      <DependentUpon>frmAutoresAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Autores\frmAutoresEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Autores\frmAutoresEditar.Designer.cs">
+      <DependentUpon>frmAutoresEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Editoras\frmEditoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Editoras\frmEditoras.Designer.cs">
+      <DependentUpon>frmEditoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Editoras\frmEditorasAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Editoras\frmEditorasAdicionar.Designer.cs">
+      <DependentUpon>frmEditorasAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Editoras\frmEditorasEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Editoras\frmEditorasEditar.Designer.cs">
+      <DependentUpon>frmEditorasEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Generos\frmGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Generos\frmGeneros.Designer.cs">
+      <DependentUpon>frmGeneros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Generos\frmGenerosAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Generos\frmGenerosAdicionar.Designer.cs">
+      <DependentUpon>frmGenerosAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Generos\frmGenerosEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Generos\frmGenerosEditar.Designer.cs">
+      <DependentUpon>frmGenerosEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Livros\frmLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Livros\frmLivros.Designer.cs">
+      <DependentUpon>frmLivros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Livros\frmLivrosAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Livros\frmLivrosAdicionar.Designer.cs">
+      <DependentUpon>frmLivrosAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Livros\frmLivrosAdicionarAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Livros\frmLivrosAdicionarAutores.Designer.cs">
+      <DependentUpon>frmLivrosAdicionarAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Livros\frmLivrosEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Livros\frmLivrosEditar.Designer.cs">
+      <DependentUpon>frmLivrosEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Livros\frmLivrosInativos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Livros\frmLivrosInativos.Designer.cs">
+      <DependentUpon>frmLivrosInativos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locacao\frmLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Locacao\frmLocacao.Designer.cs">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locacao\frmLocacaoAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Locacao\frmLocacaoAdicionar.Designer.cs">
+      <DependentUpon>frmLocacaoAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locacao\frmLocacaoInativos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Locacao\frmLocacaoInativos.Designer.cs">
+      <DependentUpon>frmLocacaoInativos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\frmUsuariosAdicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\frmUsuariosAdicionar.Designer.cs">
+      <DependentUpon>frmUsuariosAdicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\frmUsuariosEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\frmUsuariosEditar.Designer.cs">
+      <DependentUpon>frmUsuariosEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\frmUsuariosInativos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\frmUsuariosInativos.Designer.cs">
+      <DependentUpon>frmUsuariosInativos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Autores\frmAutores.resx">
+      <DependentUpon>frmAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Autores\frmAutoresAdicionar.resx">
+      <DependentUpon>frmAutoresAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Autores\frmAutoresEditar.resx">
+      <DependentUpon>frmAutoresEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Editoras\frmEditoras.resx">
+      <DependentUpon>frmEditoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Editoras\frmEditorasAdicionar.resx">
+      <DependentUpon>frmEditorasAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Editoras\frmEditorasEditar.resx">
+      <DependentUpon>frmEditorasEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Generos\frmGeneros.resx">
+      <DependentUpon>frmGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Generos\frmGenerosAdicionar.resx">
+      <DependentUpon>frmGenerosAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Generos\frmGenerosEditar.resx">
+      <DependentUpon>frmGenerosEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Livros\frmLivros.resx">
+      <DependentUpon>frmLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Livros\frmLivrosAdicionar.resx">
+      <DependentUpon>frmLivrosAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Livros\frmLivrosAdicionarAutores.resx">
+      <DependentUpon>frmLivrosAdicionarAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Livros\frmLivrosEditar.resx">
+      <DependentUpon>frmLivrosEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Livros\frmLivrosInativos.resx">
+      <DependentUpon>frmLivrosInativos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Locacao\frmLocacao.resx">
+      <DependentUpon>frmLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Locacao\frmLocacaoAdicionar.resx">
+      <DependentUpon>frmLocacaoAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Locacao\frmLocacaoInativos.resx">
+      <DependentUpon>frmLocacaoInativos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\frmUsuariosAdicionar.resx">
+      <DependentUpon>frmUsuariosAdicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\frmUsuariosEditar.resx">
+      <DependentUpon>frmUsuariosEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\frmUsuariosInativos.resx">
+      <DependentUpon>frmUsuariosInativos.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BibliotecaFinalSpaceDataSet.xsc">
+      <DependentUpon>BibliotecaFinalSpaceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BibliotecaFinalSpaceDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BibliotecaFinalSpaceDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BibliotecaFinalSpaceDataSet.xss">
+      <DependentUpon>BibliotecaFinalSpaceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
