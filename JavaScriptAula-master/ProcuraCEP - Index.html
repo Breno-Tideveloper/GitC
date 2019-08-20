@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+
+    <style>
+        .gerais {
+            padding: 3px;
+            text-align: center;
+        }
+        .right {
+            text-align: right;
+        }
+        .left {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+
+        <div class="gerais" style="margin-top:100px;">
+            <label for="CEP">CEP:</label>
+            <input id="CEP" type="text" />
+            <input id="Pesquisar" type="button" value="Pesquisar" />
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 gerais right">
+                <label for="Logradouro">Logradouro:</label>
+            </div>
+            <div class="col-md-4 gerais left">
+                <input id="Logradouro" type="text" size="70" disabled />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 gerais right">
+                <label for="Complemento">Complemento:</label>
+            </div>
+            <div class="col-md-4 gerais left">
+                <input id="Complemento" type="text" size="70" disabled />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 gerais right">
+                <label for="Bairro">Bairro:</label>
+            </div>
+            <div class="col-md-4 gerais left">
+                <input id="Bairro" type="text" size="70" disabled />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 gerais right">
+                <label for="Localidade">Localidade:</label>
+            </div>
+            <div class="col-md-4 gerais left">
+                <input id="Localidade" type="text" size="70" disabled />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 gerais right">
+                <label for="UF">UF:</label>
+            </div>
+            <div class="col-md-4 gerais left">
+                <input id="UF" type="text" size="70" disabled />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 gerais right">
+                <label for="Unidade">Unidade:</label>
+            </div>
+            <div class="col-md-4 gerais left">
+                <input id="Unidade" type="text" size="70" disabled />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 gerais right">
+                <label for="IBGE">IBGE:</label>
+            </div>
+            <div class="col-md-4 gerais left">
+                <input id="IBGE" type="text" size="70" disabled />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 gerais right">
+                <label for="Gia">Gia:</label>
+            </div>
+            <div class="col-md-4 gerais left">
+                <input id="Gia" type="text" size="70" disabled />
+            </div>
+        </div>
+
+    </div>
+
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+
+    <script>
+        document.getElementById("CEP").focus();
+
+        function VerificaSeCEPValido(pCEP) {
+            
+        }
+    </script>
+
+    <script>
+        $(function () {
+            $('#Pesquisar').click(function () {
+                var cep = document.getElementById("CEP").value;
+                if (cep === "") {
+                    alert("Necessário informar um CEP!");
+                    document.getElementById("CEP").focus();
+                } else {
+                    var url = "https://viacep.com.br/ws/" + cep + "/json/";
+                    $.get(url, function (data, textStatus, jqXHR) {
+                        $('#Logradouro').val(data.logradouro);
+                        $('#Complemento').val(data.complemento);
+                        $('#Bairro').val(data.bairro);
+                        $('#Localidade').val(data.localidade);
+                        $('#UF').val(data.uf);
+                        $('#Unidade').val(data.unidade);
+                        $('#IBGE').val(data.ibge);
+                        $('#Gia').val(data.gia);
+                    });
+                    document.getElementById("CEP").focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
